@@ -1,8 +1,9 @@
-import React from 'react';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import s from './ContactForm.module.css';
 
-class ContactForm extends React.Component {
+class ContactForm extends Component {
   state = { id: '', name: '', number: '' };
 
   handleImputChange = e => {
@@ -65,5 +66,8 @@ class ContactForm extends React.Component {
     );
   }
 }
+ContactForm.propTypes = {
+  submit: PropTypes.func.isRequired,
+};
 
 export default ContactForm;
